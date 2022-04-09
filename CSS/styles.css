@@ -1,15 +1,29 @@
+html *{
+    font-family: 'Rubik Moonrocks', cursive;
+    color: #5d4257;
+    color: linear-gradient(315deg, #5d4257 0%, #a5c7b7 74%);
+}
+body{
+    margin-left: 5%;
+}
+
 header{
     display: flex;
     flex-wrap: wrap;
+    margin-bottom: 5%;
+   
 }
 h1{
-    font-size: 3rem;
+    font-size: 4rem;
+    
 }
 button{
-    margin-left: 10%;
+    margin-left: 5%;
+    font-size: 3rem;
+    
 }
 p{
-    font-size: 2rem;
+    font-size: 6rem;
 }
 
 .row{
@@ -20,19 +34,16 @@ p{
 }
 .col{
     border: 1px solid black;
-    width: 15%;
-    padding-top:15%;
+    width: 10%;
+    padding-top:10%;
+    position: relative;
 }
 
-/* .square-content{
+.box-content{
     position:  absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    color: black;
-    text-align: center; */
-/* } */
+    right: 50%;
+    bottom: 30%;
+}
 
 
 @media(max-width: 900px) {
@@ -41,6 +52,11 @@ p{
         width: 21%;
         padding-top:21%;
     }
+    html {
+        font-size: 40.5%;
+    }
+    h1{
+        font-size: 5rem;
 
     
 }

@@ -4,19 +4,37 @@ class Game{
         this.score = [0, 1, 2, 3, 4, 5, 6, 7, 8]
     }
     
+    // addListeners() is called initially to set up event listeners
+
     addListeners(){
         document.querySelectorAll('.col').forEach(a => a.addEventListener('click', (e) => this.userSelectActions(e)))
         document.querySelector('button').addEventListener('click', (e) => this.resetTic(e))
     }
 
+    //userSelectActions() is called when a square is clicked. This then calls multiple methods, using click data as a parameter for some
+
     userSelectActions(click){
        
+        // this if statement calls checkSelected() to see if the box has already been selected, and returns an alert if it has
+
         if(this.checkSelected(click) == true){
             return
         } 
+
+        // updateScore() updates the score property, the scores are stored in an array
+        
         this.updateScore(click)
+
+        // addDisplay() updates the DOM to show the updated game board
+
         this.addDisplay(click)
+
+        // checkForWinner() checks the scores property for any winning combinations and alerts the user if there is a winner
+
         this.checkForWinner();
+
+        // changeTurn() toggles the turnCounter property which is used by other methods 
+
         this.changeTurn();
     }
 
@@ -57,6 +75,9 @@ class Game{
             alert(`${this.score[4]} has won the game! Press reset to try again!`)
         }
     }
+
+    // resetTic() resets the properties and the display, allowing the game to restart
+
     resetTic(){
         this.turnCounter = "X";
         this.score = [0, 1, 2, 3, 4, 5, 6, 7, 8]
