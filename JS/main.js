@@ -1,28 +1,12 @@
-/* constructor ideas - 
-
-turn = true/false
-
-
-this.one = true/false or 0/1;
-
-this = [0, 0, 0, 0, 0, 0, 0, 0, 0];
-if this.doc-qs-val = 1 - return "invalid" 
-   
-    else if (turn = 0) return doc.qs.inner T = X -- 1 = o - mrthod?
-    this[value] = 1;
-   
-    turn = !turn; -- method
-*/
-
 class Game{
     constructor(){
         this.turnCounter = "X";
-        this.score = [ , , , , , , , , , ]
+        this.score = [0, 1, 2, 3, 4, 5, 6, 7, 8]
     }
     
     addListeners(){
         document.querySelectorAll('.col').forEach(a => a.addEventListener('click', (e) => this.userSelectActions(e)))
-        // add reset
+        document.querySelector('button').addEventListener('click', (e) => this.resetTic(e))
     }
 
     userSelectActions(click){
@@ -30,17 +14,14 @@ class Game{
         if(this.checkSelected(click) == true){
             return
         } 
-        this.addDisplay(click)
         this.updateScore(click)
+        this.addDisplay(click)
         this.checkForWinner();
         this.changeTurn();
-        // add reset
-       
-        
     }
 
     checkSelected(click){
-        if(click.target.innerText == "X" || click.target.innerText == "O"){
+        if(this.score[click.target.dataset.key] == "X" || this.score[click.target.dataset.key] == "O"){
             alert("That square is taken! Choose another")
             return true
         }
@@ -48,11 +29,10 @@ class Game{
 
     addDisplay(click){
         if(this.turnCounter == "X"){
-            click.target.innerText = "X"
+            click.target.innerHTML = '<p class="box-content">X</p>'
         } else if (this.turnCounter == "O"){
-            click.target.innerText = "O"
+            click.target.innerHTML = '<p class="box-content">O</p>'
         }
-        
     }
     
     changeTurn(){
@@ -68,19 +48,21 @@ class Game{
     }
 
     checkForWinner(){
+     
         if(this.score[0] == this.score[1] && this.score[0] == this.score[2] || this.score[0] == this.score[3] && this.score[0] == this.score[6] || this.score[0] == this.score[4] && this.score[0] == this.score[8]){
-            console.log(this.score[0])
+            alert(`${this.score[0]} has won the game! Press reset to try again!`)
         } else if(this.score[2] == this.score[5] && this.score[2] == this.score[8] || this.score[2] == this.score[4] && this.score[2] == this.score[6]){
-            console.log(this.score[2])
+            alert(`${this.score[2]} has won the game! Press reset to try again!`)
         } else if(this.score[4] == this.score[5] && this.score[4] == this.score[3] || this.score[4] == this.score[1] && this.score[4] == this.score[7]){
-            console.log(this.score[4])
+            alert(`${this.score[4]} has won the game! Press reset to try again!`)
         }
     }
     resetTic(){
-        
+        this.turnCounter = "X";
+        this.score = [0, 1, 2, 3, 4, 5, 6, 7, 8]
+        document.querySelectorAll('.col').forEach(a => a.innerText = "")
     }
 }
 
 let ticObj = new Game();
 ticObj.addListeners();
-//click.target.dataset.key - the dataset key

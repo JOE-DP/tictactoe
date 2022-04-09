@@ -1,3 +1,14 @@
+header{
+    display: flex;
+    flex-wrap: wrap;
+}
+h1{
+    font-size: 3rem;
+}
+button{
+    margin-left: 10%;
+}
+
 .row{
     display: flex;
     flex-wrap: nowrap;
@@ -6,8 +17,8 @@
 }
 .col{
     border: 1px solid black;
-    width: 15%;
-    padding-top:15%;
+    width: 10%;
+    padding-top:10%;
 }
 
 .square-content{
@@ -16,6 +27,19 @@
     left: 0;
     bottom: 0;
     right: 0;
-    color: white;
+    color: black;
     text-align: center;
+}
+.box-content{
+
+}
+
+@media(max-width: 900px) {
+    .col{
+        border: 1px solid black;
+        width: 23%;
+        padding-top:23%;
+    }
+
+    
 }
