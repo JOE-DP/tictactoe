@@ -8,6 +8,9 @@ h1{
 button{
     margin-left: 10%;
 }
+p{
+    font-size: 2rem;
+}
 
 .row{
     display: flex;
@@ -17,29 +20,28 @@ button{
 }
 .col{
     border: 1px solid black;
-    width: 10%;
-    padding-top:10%;
+    width: 15%;
+    padding-top:15%;
 }
 
-.square-content{
+/* .square-content{
     position:  absolute;
     top: 0;
     left: 0;
     bottom: 0;
     right: 0;
     color: black;
-    text-align: center;
-}
-.box-content{
+    text-align: center; */
+/* } */
 
-}
 
 @media(max-width: 900px) {
     .col{
         border: 1px solid black;
-        width: 23%;
-        padding-top:23%;
+        width: 21%;
+        padding-top:21%;
     }
 
     
 }
+
