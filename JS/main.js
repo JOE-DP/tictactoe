@@ -68,13 +68,16 @@ class Game{
     checkForWinner(){
      
         if(this.score[0] == this.score[1] && this.score[0] == this.score[2] || this.score[0] == this.score[3] && this.score[0] == this.score[6] || this.score[0] == this.score[4] && this.score[0] == this.score[8]){
-            alert(`${this.score[0]} has won the game! Press reset to try again!`)
+            alert(`${this.score[0]} has won the game!`)
             this.resetTic();
         } else if(this.score[2] == this.score[5] && this.score[2] == this.score[8] || this.score[2] == this.score[4] && this.score[2] == this.score[6]){
-            alert(`${this.score[2]} has won the game! Press reset to try again!`)
+            alert(`${this.score[2]} has won the game!`)
             this.resetTic();
         } else if(this.score[4] == this.score[5] && this.score[4] == this.score[3] || this.score[4] == this.score[1] && this.score[4] == this.score[7]){
-            alert(`${this.score[4]} has won the game! Press reset to try again!`)
+            alert(`${this.score[4]} has won the game!`)
+            this.resetTic();
+        } else if(this.score.filter(a => a == "X" || a == "O").length == 9){
+            alert(`Its a draw, no one has won the game!`)
             this.resetTic();
         }
     }
