@@ -69,10 +69,13 @@ class Game{
      
         if(this.score[0] == this.score[1] && this.score[0] == this.score[2] || this.score[0] == this.score[3] && this.score[0] == this.score[6] || this.score[0] == this.score[4] && this.score[0] == this.score[8]){
             alert(`${this.score[0]} has won the game! Press reset to try again!`)
+            this.resetTic();
         } else if(this.score[2] == this.score[5] && this.score[2] == this.score[8] || this.score[2] == this.score[4] && this.score[2] == this.score[6]){
             alert(`${this.score[2]} has won the game! Press reset to try again!`)
+            this.resetTic();
         } else if(this.score[4] == this.score[5] && this.score[4] == this.score[3] || this.score[4] == this.score[1] && this.score[4] == this.score[7]){
             alert(`${this.score[4]} has won the game! Press reset to try again!`)
+            this.resetTic();
         }
     }
 
