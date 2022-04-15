@@ -76,6 +76,9 @@ class Game{
         } else if(this.score[4] == this.score[5] && this.score[4] == this.score[3] || this.score[4] == this.score[1] && this.score[4] == this.score[7]){
             alert(`${this.score[4]} has won the game!`)
             this.resetTic();
+        } else if(this.score[6] == this.score[7] && this.score[6] == this.score[8] ){
+            alert(`${this.score[6]} has won the game!`)
+            this.resetTic();
         } else if(this.score.filter(a => a == "X" || a == "O").length == 9){
             alert(`Its a draw, no one has won the game!`)
             this.resetTic();
