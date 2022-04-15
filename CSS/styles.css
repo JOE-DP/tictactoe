@@ -36,29 +36,30 @@ p{
 .col{
     border: 1px solid black;
     width: 10%;
-    padding-top:10%;
+    aspect-ratio: 1;
     position: relative;
 }
 
 .box-content{
-    position:  absolute;
-    right: 50%;
-    bottom: 30%;
+       display: flex;
+       width: 50%;
+       height: 100%;
+       margin: auto;
+       align-items:center;
+       justify-content:center;
+
 }
 
 
 @media(max-width: 900px) {
     .col{
-        border: 1px solid black;
-        width: 21%;
-        padding-top:21%;
+        width: 23%;
+        aspect-ratio: 1;
     }
     html {
         font-size: 40.5%;
     }
     h1{
         font-size: 5rem;
-
-    
+    }
 }
-
